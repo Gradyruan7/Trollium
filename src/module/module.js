@@ -13,7 +13,7 @@ export default class Module {
         this.toggle = this.toggle.bind(this);
     }
 
-    onEnable () {}
+    onEnable (j) {}
     onDisable() {}
     onGameTick() {}
     onRender() {}
@@ -21,19 +21,19 @@ export default class Module {
     onGameExited() {}
     onSettingUpdate() {}
 
-    enable () {
+    enable (j) {
         this.isEnabled = true;
         eventListener.emit("module.update", this);
         this.onEnable();
     }
 
-    disable () {
+    disable (l) {
         this.isEnabled = false;
         eventListener.emit("module.update", this);
         this.onDisable();
     }
 
-    toggle () {
+    toggle (j) {
         if (this.isEnabled) {
             this.disable();
         } else {
